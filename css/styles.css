@@ -121,3 +121,9 @@ nav .nav-lef {
 .head{
   font-size: 22px;
 }
+.nav-c{
+  color: #fff !important;
+}
+.nav-c:hover{
+  color:rgba(255,255,255,255);
+}
