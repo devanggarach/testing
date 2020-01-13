@@ -123,6 +123,8 @@ nav .nav-lef {
 }
 .nav-c{
   color: #fff !important;
+  text-decoration: none !important;
+  padding-right: 15px !important;
 }
 .nav-c:hover{
   color:rgba(255,255,255,255);
