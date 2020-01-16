@@ -207,11 +207,13 @@ a.article:hover {
     position: absolute;
     z-index: 1;
     left:10%;
-    top:20%;
+    top:60%;
     right: 45%;
-    bottom: 40%;
-    border:2px solid black;
-}
+    bottom: 10%;
+    }
+    .carousel-caption h6{
+        font-size: 1.5rem;
+    }
 }
 @media only screen and (max-width: 992px) {
     .carousel-item{
@@ -273,4 +275,27 @@ nav ul .nav-item{
     right: 20%;
     bottom: 40%;
     }
+}
+.btn-c{
+    width: 116px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    box-shadow: 2px 2px rgba(0,0,0,0.5);
+}
+.body-c{
+    margin-top: 14px;
+    border: 1.5px solid green;
+}
+.deskor{
+    padding-bottom: 10px;
+}
+.card-img{
+    height: 250px;
+    background-position: center center;
+    background-size: contain;
+    padding-bottom:5px; 
+}
+#second img,#second .carousel-item{
+    height: 350px;
 }
