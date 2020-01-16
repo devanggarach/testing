@@ -1,4 +1,5 @@
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+/*@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";*/
 *{
     margin:0px;
     padding: 0px;
@@ -31,6 +32,8 @@ a:focus {
     border-radius: 0;
     margin-bottom: 40px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    transition: opacity 0.9s ease;
 }
 
 .navbar-btn {
@@ -56,7 +59,7 @@ a:focus {
     top: 0;
     left: -250px;
     height: 100vh;
-    z-index: 20000;
+    z-index: 1100;
     background: #004e00;
     opacity: 0.9;
     color: #fff;
@@ -190,39 +193,11 @@ a.article:hover {
     top: 0;
     right: 0;
 }
-@media (min-width: 992px) {
-  .RqTree{
-    visibility: hidden;
-  }
-}
+
 .navbar-brand{
   margin:0;
 }
 
-@media only screen and (min-width: 992px) {
-    .hidedesktop {
-        display:none;
-    }
-    .carousel-caption{
-    position: absolute;
-    z-index: 1;
-    left:10%;
-    top:60%;
-    right: 45%;
-    bottom: 10%;
-    }
-    .carousel-caption h6{
-        font-size: 1.5rem;
-    }
-}
-@media only screen and (max-width: 992px) {
-    .carousel-item{
-        height: 50vh;
-        max-height: 150px;
-        background: no-repeat center center scroll;
-        background-size: cover;
-    }
-}
 .nav-c{
   color: #e9eab3 !important;
   text-decoration: none !important;
@@ -275,18 +250,51 @@ nav ul .nav-item{
     right: 20%;
     bottom: 40%;
     }
+    .carousel-control-prev-icon{
+        visibility: hidden;
+    }
+    .carousel-control-next-icon{
+        visibility: hidden;
+    }
+    .carousel-indicators{
+        visibility: hidden;
+    }
+
 }
 .btn-c{
-    width: 116px;
-    border-radius: 20px;
+    width: 125px;
+    border-radius: 25px;
     font-size: 15px;
-    font-weight: bold;
+    /*font-weight: bold;*/
+    background: rgb(38,82,24);
+    background: linear-gradient(270deg, rgba(38,82,24,1) 0%, rgba(116,255,0,0.9416141456582633) 100%);
     box-shadow: 2px 2px rgba(0,0,0,0.5);
+}
+.btn-c svg{
+    font-size: 1.6em;
+    position: relative;
+    top: 2px;
+    left: 4px;
 }
 .body-c{
     margin-top: 14px;
     border: 1.5px solid green;
 }
+.btn-ct{
+    width: 160px;
+    border-radius: 20px;
+    box-shadow: 2px 2px rgba(0,0,0,0.5)
+}
+.btn-ct:hover{
+    background: transparent !important;
+    font-weight: bold !important;
+    color: #fff;
+    border: 2px;
+    box-shadow: 2px 2px rgba(0,0,0,0.5)
+}
+
+
+
 .deskor{
     padding-bottom: 10px;
 }
@@ -298,4 +306,164 @@ nav ul .nav-item{
 }
 #second img,#second .carousel-item{
     height: 350px;
+}
+
+/*
+test
+.carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+}*/
+.carousel-indicators li {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 100%;   
+      margin: 10px;
+      text-indent: 0;
+      cursor: pointer;
+      border: 2px solid black;
+      border-radius: 100%;
+      background-color: #fff;
+      
+}
+
+
+.carousel-indicators .active {
+      width: 10px;
+      height: 10px;
+      margin: 10px;
+      background-color: rgba(255,255,255,0.1);
+      border: 2px solid white;
+}
+.carousel-caption h6{
+     text-shadow: 2px 2px rgba(0,0,0,0.5);
+}
+
+.navbar-hide {
+    pointer-events: none;
+    opacity: 0;
+}
+.nav-c img{
+    height: 30px;
+}
+.nav-c .nav-t{
+    position: relative;
+    bottom: 10px;
+    right: 10px;
+    font-size: 10px;
+}
+.bottom-b{
+    vertical-align: text-bottom;
+    font-weight: bold;
+}
+
+.card-img-overlay{
+    /*border: 2px solid black;*/
+    position: absolute;
+    right: 50%;
+    bottom: 3%;
+}
+@media (min-width: 992px) {
+  .RqTree{
+    visibility: hidden;
+  }
+}
+@media only screen and (min-width: 992px) {
+    .hidedesktop {
+        display:none;
+    }
+    .carousel-caption{
+    position: absolute;
+    z-index: 1;
+    left:10%;
+    top:60%;
+    right: 45%;
+    bottom: 10%;
+    }
+    .carousel-caption h6{
+        font-size: 1.5rem;
+    }
+    .card-img-overlay{
+    margin-top:40px;
+    }
+}
+@media only screen and (max-width: 992px) {
+    .carousel-item{
+        height: 50vh;
+        max-height: 150px;
+        background: no-repeat center center scroll;
+        background-size: cover;
+    }
+    .card .body-c{
+    margin-top: 3px;
+    padding: 0.25em;
+    }
+    .container-fluid{
+        padding: 5px;
+    }
+    .card .card-img{
+    height: 100px;
+    background-position: center center;
+    background-size: contain;
+    padding-bottom:3px; 
+    }
+    .card-img-overlay{
+    /*border: 2px solid black;*/
+    position: absolute;
+    right: 20%;
+    bottom: 3%;
+    font-size: 0.5rem;
+    padding: 0.25rem;
+    }
+    .card-img-overlay .card-title{
+        margin-bottom: 0.5rem
+    }
+    .card-img-overlay p{
+        margin-bottom: 0rem;
+        color: #000;
+        text-shadow: 0.5px 0.5px rgba(0,0,0,0.5);
+    }
+    
+
+}
+.card-img-overlay p{
+        color: #000;
+        text-shadow: 1px 1px rgba(0,0,0,0.5);
+}
+.card{
+    border:0px!important;
+}
+.desk1{
+    font-size: 28px;
+}
+#myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  
+  
+  color: #004e00; /* Set a background color */
+  
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  
+  font-size: 18px; /* Increase font size */
+}
+
+#myBtn:hover {
+  color: #EBCC34; /* Add a dark-grey background on hover */
+}
+.btn-up{
+    width: 60px;
+    background: transparent !important;
+    border-radius: 20px;
+    box-shadow: 2px 2px rgba(0,0,0,0.5)
+}
+footer{
+    margin-top: 5px;
+    background-color: #000008;
 }
