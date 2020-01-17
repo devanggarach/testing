@@ -269,24 +269,7 @@
                   </div>
                 </div>
         	</div>
-            <!-- <footer>
-                 <div class="container">
-                      <div class="row">
-                        <div class="col-md-12">
-                          <div class="copyright-text">
-                            <p>© 2018
-                              <a href="#">DigiPro</a>. All rights reserved. Created by
-                              <a href="#">AazzTech</a>
-                            </p>
-                          </div>
-
-                          <div class="go_top">
-                            <span class="icon-arrow-up"></span>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </footer> -->
+            
             <footer>
                 <div class="container" style="padding-top: 10px;">
                     <div class="row">
@@ -299,60 +282,12 @@
                     </div>                    
                 </div>
             </footer>
-        <!--      <footer>
-        <div class="container">
-            <div class="row ">
-                <div class="col-md-4 text-center text-md-left ">
-                    
-                    <div class="py-0">
-                        <h3 class="my-4 text-white">About<span class="mx-2 font-italic text-light ">CARETREE</span></h3>
- 
-                        <p class="footer-links font-weight-bold">
-                            <a class="text-white" href="#home">Home</a>
-                            |
-                            <a class="text-white" href="#wecare">We Care</a>
-                            |
-                            <a class="text-white" href="#aboutus">About Us</a>
-                            |
-                            <a class="text-white" href="#rescue">Rescue</a>
-                        </p>
-                        <p class="text-light py-4 mb-4">&copy;2020 CARETREE</p>
-                    </div>
-                </div>
-                
-                <div class="col-md-4 text-white text-center text-md-left ">
-                    <div class="py-2 my-4">
-                        <div>
-                            <p class="text-white"> <i class="fa fa-map-marker mx-2 "></i>
-                                    ATMIYA UNIVERSITY, KALAWAD ROAD, RAJKOT - 360 005.</p>
-                        </div>
- 
-                        <div> 
-                            <p><i class="fa fa-phone  mx-2 "></i> +91 88888 88888</p>
-                        </div>
-                        <div>
-                            <p><i class="fa fa-envelope  mx-2"></i><a href="mailto:caretree1@gmail.com">caretree1@gmail.com</a></p>
-                        </div>  
-                    </div>  
-                </div>
-                
-                <div class="col-md-4 text-white my-4 text-center text-md-left ">
-                    
-                    <div class="py-2">
-                        <a href="#"><i class="fab fa-facebook fa-2x text-primary mx-3"></i></a>
-                        <a href="#"><i class="fab fa-google-plus fa-2x text-danger mx-3"></i></a>
-                        <a href="#"><i class="fab fa-twitter fa-2x text-info mx-3"></i></a>
-                        <a href="#"><i class="fab fa-youtube fa-2x text-danger mx-3"></i></a>
-                    </div>
-                </div>
-            </div>  
-        </div>
-     </footer> -->
+        
         </div>
 
         
     </div>
-<button onclick="topFunction()" id="myBtn" class="btn btn-outline-light btn-up" title="Go to top"><i class="fas fa-chevron-up"></i></button>
+<!-- <button onclick="topFunction()" id="myBtn" class="btn btn-outline-light btn-up" title="Go to top"><i class="fas fa-chevron-up"></i></button> -->
     <div class="overlay"></div>
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="js/jquery-3.3.1.slim.min.js"></script>
@@ -362,56 +297,7 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- jQuery Custom Scroller CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script type="text/javascript">
-    	$(document).ready(function () {
-    		$("#sidebar").mCustomScrollbar({
-    			theme: "minimal"
-    		});
-
-    		$('#dismiss, .overlay').on('click', function () {
-    			$('#sidebar').removeClass('active');
-    			$('.overlay').removeClass('active');
-    		});
-
-    		$('#sidebarCollapse').on('click', function () {
-    			$('#sidebar').addClass('active');
-    			$('.overlay').addClass('active');
-    			$('.collapse.in').toggleClass('in');
-    			$('a[aria-expanded=true]').attr('aria-expanded', 'false');
-    		});
-    	});
-
-        // scroll functions
-        $(window).scroll(function(e) {
-
-            // add/remove class to navbar when scrolling to hide/show
-            var scroll = $(window).scrollTop();
-            if (scroll >= 150) {
-                $('.navbar').addClass("navbar-hide");
-            } else {
-                $('.navbar').removeClass("navbar-hide");
-            }
-
-        });
-        mybutton = document.getElementById("myBtn");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
-    </script>
+    <script src="js/new.js"></script>
 </body>
 
 </html>
