@@ -300,8 +300,9 @@ nav ul .nav-item{
 
 
 .deskor{
-    padding-bottom: 10px;
+    padding:5px 10px 5px 10px;
 }
+
 .card-img{
     height: 250px;
     background-position: center center;
@@ -440,7 +441,7 @@ test
     border:0px!important;
 }
 .desk1{
-    font-size: 28px;
+    font-size: 23px; 
 }
 #myBtn {
   display: none; /* Hidden by default */
@@ -591,3 +592,18 @@ footer{
     border-radius: 10px;
 }
 */
+.btn-g{
+    /*width: 125px;*/
+    border-radius: 25px;
+    /*font-size: 15px;*/
+    /*font-weight: bold;*/
+    
+    background: linear-gradient(270deg, rgba(38,82,24,1) 0%, rgba(116,255,0,0.9416141456582633) 100%);
+    box-shadow: 1px 1px rgba(0,0,0,0.5);
+}
+.btn-g svg{
+    /*font-size: 1.6em;*/
+    /*position: relative;
+    top: 2px;
+    left: 4px;*/
+}
