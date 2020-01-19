@@ -18,6 +18,7 @@
 
     <!-- Font Awesome JS -->
     <script defer src="js/all.min.js"></script>
+
 </head>
 
 <body>
@@ -123,7 +124,7 @@
                     </div>
                 </div>
             </nav>
-            <form action="index.html" class="login-form">
+            <form action="index.html" class="register-form">
 
                 <div align="center">
                     <img src="img/logo.png" width="85px">
@@ -131,21 +132,41 @@
 
         <div class="txtb">
           <input type="text">
-          <span data-placeholder="Username"></span>
+          <span data-placeholder="Name"></span>
+        </div>
+        <div class="txtb">
+          <input type="email">
+          <span data-placeholder="Email"></span>
         </div>
 
         <div class="txtb">
           <input type="password">
           <span data-placeholder="Password"></span>
         </div>
-        <div class="bottom-t">
-          <a href="#register">Forgot password?</a>
+        <div class="txtb">
+          <input type="password">
+          <span data-placeholder="Confirm Password"></span>
+        </div>
+        <div class="txtb">
+          <input type="mobile">
+          <span data-placeholder="Mobile"></span>
+        </div>
+        <div class="txtb1">
+                <select class="animationlist">
+                    <optgroup label="Rajkot">                        
+                        <option value="150 feet Ring Road">150 Feet Ring Road</option>
+                        <option value="University">University Road</option>
+                        <option value="Raiya">Raiya Circle</option>
+                        <option value="kalawad">Kalawad</option>
+                    </optgroup>
+                </select>
+          <span data-placeholder="Area"></span>
         </div>
         
-        <input type="submit" class="logbtn" value="LOGIN">
+        <input type="submit" class="logbtn" value="REGISTER">
 
         <div class="bottom-text">
-          Don't have account? <a href="#register"><b>REGISTER</b></a>
+          Already have an account? <a href="login.html"><b>LOGIN</b></a>
         </div>
 
       </form>
