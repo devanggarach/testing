@@ -6,7 +6,7 @@
 }
 body {
     font-family: 'Poppins', sans-serif;
-    background: #fafafa;
+    background: #fff;
 }
 
 p {
@@ -27,7 +27,6 @@ a:focus {
 
 .navbar {
     padding: 15px 10px;
-    
     border: none;
     border-radius: 0;
     margin-bottom: 40px;
@@ -35,7 +34,9 @@ a:focus {
     opacity: 1;
     transition: opacity 0.9s ease;
 }
-
+.navbar-x{
+  background-color: #4e7c4e !important;
+}
 .navbar-btn {
     box-shadow: none;
     outline: none !important;
@@ -687,4 +688,22 @@ select.animationlist:focus {
 option:checked, option:hover {
     color: #fff;
     background: #488f8f;
+}
+#content-x {
+    width: 100%;
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    top: 16%;
+    right: 0;
+}
+.card-trans{
+  background: transparent !important;
+  position: absolute;
+  z-index: 1;
+  float: right;
+  right:0%;
+}
+.text-l{
+  text-align: left;
 }
