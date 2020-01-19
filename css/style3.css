@@ -492,7 +492,7 @@ footer{
   border-radius: 10px;
   position: absolute;
   left: 50%;
-  top: 45%;
+  top: 50%;
   z-index: 5;
   transform: translate(-50%,-50%);
 }
