@@ -20,6 +20,7 @@
     <script defer src="js/all.min.js"></script>
 
 </head>
+<?php include_once 'p_connection.php'; ?>
 
 <body>
 
@@ -124,52 +125,61 @@
                     </div>
                 </div>
             </nav>
-            <form action="register.html" class="register-form">
+            <form name="f_login" action="pages_php/p_signup.php" method="POST" onsubmit="return Js_f_login()" class="register-form">
 
                 <div align="center">
                     <img src="img/logo.png" width="85px">
                 </div>
 
         <div class="txtb">
-          <input type="text">
+          <input type="text" name="l_name">
           <span data-placeholder="Name"></span>
         </div>
         <div class="txtb">
-          <input type="email">
+          <input type="email" name="l_email">
           <span data-placeholder="Email"></span>
         </div>
 
         <div class="txtb">
-          <input type="password">
+          <input type="password" name="l_password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" title="password contain 1 small & 1 capital alphabet, 1 symbol and 1 number">
           <span data-placeholder="Password"></span>
+        
         </div>
+        <div class="error">hello</div>
+        
         <div class="txtb">
-          <input type="password">
+          <input type="password" name="l_re_password">
           <span data-placeholder="Confirm Password"></span>
         </div>
         <div class="txtb">
-          <input type="mobile">
+          <input type="mobile" name="l_mobile">
           <span data-placeholder="Mobile"></span>
         </div>
         <div class="txtb1">
-                <select class="animationlist">
-                    <optgroup label="Rajkot">                        
-                        <option value="150 feet Ring Road">150 Feet Ring Road</option>
-                        <option value="University">University Road</option>
-                        <option value="Raiya">Raiya Circle</option>
-                        <option value="kalawad">Kalawad</option>
-                    </optgroup>
-                </select>
+                
+                    <!-- <optgroup label="Rajkot">                         -->
+                        <?php
+                         $sql= "select * from pin_code;"; 
+                         $result=mysqli_query($conn,$sql);
+                         echo "<select class='animationlist' name='l_area' onchange='Aj_pincode()'>";
+                         echo "<option></option>";
+                         while($row = mysqli_fetch_assoc($result))
+                         {
+                            echo "<option value=".$row['p_id'].">". $row['p_area'] ."</option>";
+                         }
+                            echo "</select>";
+                    ?>
+                    <!-- </optgroup> -->
+                
           <span data-placeholder="Area"></span>
         </div>
+
         
-        <input type="submit" class="logbtn" value="REGISTER">
+        
+        <input type="submit" name="login" class="logbtn" value="REGISTER">
 
         <div class="bottom-text">
           Already have an account? <a href="login.html"><b>LOGIN</b></a>
-        </div>
-        <div class="bottom-text">
-          Register as NGO <a href="registerngo.html"><b>REGISTER NGO</b></a>
         </div>
 
       </form>
@@ -229,6 +239,212 @@
       });
 
       </script>
+
+
+
+
+<!-- Javascript -->
+
+<script>
+    // dynamic dropdown
+function Aj_pincode() {
+    
+
+var ajl_area =document.forms["f_login"]["l_area"];
+var xhttp2 = new XMLHttpRequest();
+    xhttp2.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("wAjl_pincode").innerHTML =this.responseText;
+        }
+    };
+    xhttp2.open("GET", "page/pl_pincode.php?id="+ajl_area.value, true);
+    xhttp2.send();
+
+var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("wAjl_city").innerHTML =this.responseText;
+       }
+    };
+    xhttp.open("GET", "page/pl_city.php?id="+ajl_area.value, true);
+    xhttp.send(); 
+
+
+var xhttp3 = new XMLHttpRequest();
+    xhttp3.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("wAjl_state").innerHTML =this.responseText;
+        }
+    };
+    xhttp3.open("GET", "page/pl_state.php?id="+ajl_area.value, true);
+    xhttp3.send();
+
+}
+  
+</script>
+
+<script type="text/javascript">
+$(function () {
+    $("input[name=Password]").on("invalid", function () {
+        this.setCustomValidity("Please enter at least 5 characters.");
+    });
+});
+
+    function Js_f_login() 
+    {
+        alert('+++++++++++');
+        if (!new RegExp(/^[A-Za-z\s]+$/).test(document.f_login.l_name.value))
+            {
+                document.getElementById("wJsl_name").innerHTML = "Name must be contain<br> characters and space";
+                alert('----------');
+                return false;
+            }
+            else
+            {
+                document.getElementById("wJsl_name").innerHTML = "";
+                alert('----------');
+            }
+
+        
+        if (!new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/).test(document.f_login.l_email.value))
+            {
+                document.getElementById("wJsl_email").innerHTML = "Invalid emil id";
+                return false;
+            }
+            else
+            {
+                document.getElementById("wJsl_email").innerHTML = "";
+            }
+
+        var jsl_password = document.f_login.l_password.value;
+        var jsl_re_password = document.f_login.l_re_password.value;
+        if (new RegExp(/[A-Za-z0-9_]\w{5,15}$/).test(jsl_password))
+            {
+                if (jsl_password != jsl_re_password)
+                    {
+                        document.getElementById("wJsl_password").innerHTML = "Password not match";
+                        return false;
+                    }
+                    else
+                    {
+                        document.getElementById("wJsl_password").innerHTML = "";
+                    }
+            }
+        else
+        {
+            document.getElementById("wJsl_password").innerHTML = "Password must be 6 to 15 <br>characters which contain <br>only characters, numeric <br>digits, underscore";
+            return false;
+        }
+
+        if (!new RegExp(/^\d{10}$/).test(document.f_login.l_mobile.value))
+            {
+                document.getElementById("wJsl_mobile").innerHTML = "Enter valid phone number";
+                return false;
+            }
+            else
+            {
+                document.getElementById("wJsl_mobile").innerHTML = "";
+            }
+
+        var jsl_house = document.f_login.l_house.value;
+        if (jsl_house == "")
+            {
+                document.getElementById("wJsl_house").innerHTML = "Enter House Name <br>/ Block No.";
+                return false;
+            }
+            else
+            {
+                document.getElementById("wJsl_house").innerHTML = "";
+            }
+
+        var jsl_street = document.f_login.l_street.value;
+        if (jsl_street == "")
+            {
+                document.getElementById("wJsl_street").innerHTML = "Enter Street Name <br>Society Name";
+                return false;
+            }
+            else
+            {
+                document.getElementById("wJsl_street").innerHTML = "";
+            }
+
+        var jsl_land = document.f_login.l_land.value;
+        if (jsl_land == "")
+            {
+                document.getElementById("wJsl_land").innerHTML = "Enter Main Road <br>/ Land Mark";
+                return false;
+            }
+            else
+            {
+                document.getElementById("wJsl_land").innerHTML = "";
+            }
+
+        var jsl_area = document.f_login.l_area.value;
+        if (jsl_area == "")
+            {
+                document.getElementById("wJsl_area").innerHTML = "select Area name";
+                return false;
+            }
+            else
+            {
+                document.getElementById("wJsl_area").innerHTML = "";
+            }
+
+        if (!new RegExp(/^\d{6}$/).test(document.f_login.l_pincode.value))
+            {
+                document.getElementById("wJsl_pincode").innerHTML = "Invalis Pincode";
+                return false;
+            }
+            else
+            {
+                document.getElementById("wJsl_pincode").innerHTML = "";
+            }
+
+        if (!new RegExp(/^[A-Za-z]+$/).test(document.f_login.l_city.value))
+            {
+                document.getElementById("wJsl_city").innerHTML = "Invalid City name";
+                return false;
+            }
+            else
+            {
+                document.getElementById("wJsl_city").innerHTML = "";
+            }
+            // 
+        if (!new RegExp(/^[A-Za-z]+$/).test(document.f_login.l_state.value))
+            {
+                document.getElementById("wJsl_state").innerHTML = "Invalid State name";
+                return false;
+            }
+            else
+            {
+                document.getElementById("wJsl_state").innerHTML = "";
+                
+            }
+
+
+
+            /*
+        var jsl_birthdate = document.f_login.l_birthdate.value;
+        if (jsl_birthdate == "")
+            {
+                document.getElementById("wJsl_birthdate").innerHTML = "enter value";
+                return false;
+            }
+            else
+            {
+                document.getElementById("wJsl_birthdate").innerHTML = "";
+            }*/
+
+
+    }
+</script>
+<!-- / Javascript -->
+
+<!-- php -->
+<?php include_once 'p_connection.php'; ?>
+<!-- / php -->
+
+
 </body>
 
 </html>
