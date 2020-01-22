@@ -15,10 +15,9 @@
     	<link rel="stylesheet" href="css/all.min.css">
     	<!-- Scrollbar Custom CSS -->
     	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
-
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     	<!-- Font Awesome JS -->
     	<script defer src="js/all.min.js"></script>
-        
     </head>
 
     <body>
@@ -120,9 +119,20 @@
                             <a class="nav-c" href="#"><img src="img/treecart.png"><!-- <i style="font-size: 20px" class="fa fa-shopping-cart head"></i> -->
                             <span class="nav-t badge badge-sm badge-light">9+</span></a>
                             <img src="img/line.png" style="height: 30px; padding-right: 10px">
-                            <a class="nav-c" href="#"><i style="font-size: 30px; position: relative; top:5px;" class="fa fa-user head"></i>
-                            </a>
-
+                            
+                            <div class="btn-group">
+                                  <a class="nav-c" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                   <i style="font-size: 30px; position: relative; top:5px;" class="fa fa-user head"></i>
+                                  </a>
+                                  <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="#">My Account</a>
+                                    <a class="dropdown-item" href="#">Mu Order</a>
+                                    <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Logout</a>
+                                  </div>
+                            </div>
+                                
 
             				<!-- <i class="fas fa-grip-lines-vertical nav-c" style="font-size: 20px"></i> -->
             				<!-- <a class="nav-c" href="#"><i class="far fa-user" style="font-size: 30px;"></i> </i></a> --><!-- <i class="fa fa-user-alt head" style="font-size: 20px"> -->
@@ -131,32 +141,11 @@
             	</nav>
             	
                     <div class="row rmv ml-auto mr-auto">
-                            <div class="col-md-12" class="" style="margin-bottom: 10px;">
-                            Select NGO: <select class="form-control">
-                                <option>Sadbhavna</option>
-                                <option>Manavseva</option>
-                            </select>
-                        </div>
+                            
+                            <div class="col-md-3 col-sm-6 col-lg-3 col-xl-3 col-xs-12" class="border" id="piechart">
+                            </div>    
 
-                            <div class="col-md-3 col-sm-6 col-lg-3 col-xl-3 col-xs-12">
-                                <div class="card wecare-card">
-                                  <form>
-                                      
-                                    <img class="card-img-top care-img" src="img/bg.jpg" alt="Card image cap">
-                                    <div class="card-body" style="background-color: #004e00;">
-                                        <div class="card-text text-md">Neem Tree</div>
-                                        <div class="btn-toolbar justify-content-between">
-                            <input type="number" class="form-control col-md-4" maxlength="1" size="1" step="1" min="0" max="" value="1" name="quantity" >
-  
-                            <div class="btn-group">
-                                <button class="btn btn-outline-light">Cart</button>
-                            </div>
-                        </div>
-                                    </div>
-                                  
-                                  </form>
-                                </div>
-                            </div>      
+
                     </div>
                     
                     
@@ -175,9 +164,6 @@
                     </div>
                 </footer>
                 </div>
-                
-                
-            
             </div>
 
             
@@ -193,6 +179,40 @@
         <!-- jQuery Custom Scroller CDN -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
         <script src="js/new.js"></script>
+        <script>
+            // Draw the chart and set the chart values
+            // Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Planted', 'Per Month'],
+  ['January', 80],
+  ['February', 60],
+  ['March', 20],
+  ['April', 21],
+  ['May', 40],
+  ['June', 89],
+  ['July', 26],
+  ['August', 24],
+  ['September', 78],
+  ['October', 21],
+  ['November', 22],
+  ['December', 35]
+
+]);
+
+  // Optional; add a title and set the width and height of the chart
+  var options = {'title':'Planted trees per month', 'width':550, 'height':400};
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+}
+
+
+        </script>
     </body>
 
     </html>
