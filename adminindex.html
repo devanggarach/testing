@@ -204,14 +204,15 @@
                                 </div>    
                             </div>
                         </div>
-                            <div class="row rmv ml-auto mr-auto">
-                                <div class="col-md-3 col-sm-6 col-lg-3 col-xl-3 col-xs-12" class="border" id="piechart">
-                                </div>
+                        <div class="row rmv ml-auto mr-auto">
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 col-xs-12" class="border" id="piechart">
                             </div>
-                            <div class="row rmv ml-auto mr-auto">
-                                <div class="col-md-3 col-sm-6 col-lg-3 col-xl-3 col-xs-12" class="border" id="piechart">
-                                </div>
-                            </div>
+                            <div id="chartContainer" class="col-md-5 col-sm-5 col-lg-5 col-xl-5 col-xs-12" class="border"></div>
+                        </div>
+                        <div class="row rmv ml-auto mr-auto">
+                            
+
+                        </div>
                                 
 
 
@@ -246,6 +247,8 @@
         <!-- Bootstrap JS -->
         <script src="js/bootstrap.min.js"></script>
         <!-- jQuery Custom Scroller CDN -->
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
         <script src="js/new.js"></script>
         <script>
@@ -273,7 +276,7 @@ function drawChart() {
 ]);
 
   // Optional; add a title and set the width and height of the chart
-  var options = {'title':'Planted trees per month', 'width':400, 'height':400};
+  var options = {'title':'Planted trees per month', 'width':600, 'height':600};
 
   // Display the chart inside the <div> element with id="piechart"
   var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -282,6 +285,41 @@ function drawChart() {
 
 
         </script>
+        <script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+    animationEnabled: true,
+    theme: "light2",
+    title:{
+        text: "Planted Trees"
+    },
+    axisY:{
+        includeZero: false
+    },
+    data: [{        
+        type: "line",       
+        dataPoints: [
+            { y: 450 },
+            { y: 414},
+            { y: 520 },
+            { y: 460 },
+            { y: 450 },
+            { y: 500 },
+            { y: 480 },
+            { y: 480 },
+            { y: 410 },
+            { y: 500 },
+            { y: 480 },
+            { y: 510 }
+        ]
+    }]
+});
+chart.render();
+
+}
+</script>
+
     </body>
 
     </html>

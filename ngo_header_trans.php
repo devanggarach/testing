@@ -1,26 +1,3 @@
-    <!DOCTYPE html>
-    <html>
-
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-        <title>Care Tree</title>
-
-        <!-- Bootstrap CSS CDN -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <!-- Our Custom CSS -->
-        <link rel="stylesheet" href="css/style3.css">
-        <link rel="stylesheet" href="css/all.min.css">
-        <!-- Scrollbar Custom CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
-
-        <!-- Font Awesome JS -->
-        <script defer src="js/all.min.js"></script>
-    </head>
-  <body>
-
     <div class="wrapper">
         <!-- Sidebar  -->
         <nav id="sidebar">
@@ -88,7 +65,7 @@
             <!-- Page Content  -->
             <div id="content-x">
 
-                <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-x">
+                <nav class="navbar navbar-expand-lg navbar-light fixed-top">
                     <div class="container-fluid">
 
                         <a id="sidebarCollapse" class="hidedesktop nav-c">
@@ -147,82 +124,3 @@
                                 </div>
                             </div>
                         </nav>
-
-                        <div class="row rmv ml-auto mr-auto">
-                            
-                            <form action="registerngostep2.html" class="register-form">
-
-                <div align="center">
-                    <img src="img/logo.png" width="85px">
-                </div>
-                <h3 align="center" style="color: #fff;">Manage Tree</h3>
-
-        <div class="txtb1">
-                <select class="animationlist">
-                    <optgroup label="Tree List">                        
-                        <option>Neem Tree</option>
-                        <option>Karanja Tree</option>
-                    </optgroup>
-                </select>
-          <span data-placeholder="Tree Name"></span>
-        </div>
-        <div class="txtb">
-          <input type="text">
-          <span data-placeholder="Price"></span>
-        </div>
-        <div class="txtb">
-          <input type="text">
-          <span data-placeholder="Quantity"></span>
-        </div>
-
-        <div class="txtb2">
-          <input type="file">
-          <span data-placeholder="Tree Image"></span>
-        </div>
-        
-        <div class="btn-toolbar justify-content-between">
-                                            <div class="btn-group">
-                                                <button class="btn btn-outline-warning">Edit</button>
-                                            </div>
-                                            <div class="btn-group">
-                                                <button class="btn btn-outline-light">Delete</button>
-                                            </div>
-                                            <div class="btn-group">
-                                                <button class="btn btn-outline-primary">Add</button>
-                                            </div>
-                                        </div>
-      </form>
-                            </div>
-
-                        </div>
-                    </div>
-              <!--       <footer>
-                        <div class="container" style="padding-top: 10px;">
-                            <div class="row">
-                                <div class="col-md-4" align="center"><p><i class="fa fa-envelope  mx-2"></i><a href="mailto:caretree1@gmail.com">caretree1@gmail.com</a></p> </div>
-                                <div class="col-md-4" align="center" style="color: #fff; font-weight: bold; padding-top:5px;">CARETREE @ 2020</div>
-                                <div class="col-md-4" align="center">
-                                    <p><a href="" >Team ID : TM000079 - Atmiya University</a></p>
-                                </div>
-
-                            </div>                    
-                        </div>
-                    </footer> -->
-                </div>
-                
-                
-
-        <!-- <button onclick="topFunction()" id="myBtn" class="btn btn-outline-light btn-up" title="Go to top"><i class="fas fa-chevron-up"></i></button> -->
-        <div class="overlay"></div>
-        <!-- jQuery CDN - Slim version (=without AJAX) -->
-        <script src="js/jquery-3.3.1.slim.min.js"></script>
-        <!-- Popper.JS -->
-        <script src="js/popper.min.js"></script>
-        <!-- Bootstrap JS -->
-        <script src="js/bootstrap.min.js"></script>
-        <!-- jQuery Custom Scroller CDN -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-        <script src="js/new.js"></script>
-    </body>
-
-    </html>

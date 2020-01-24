@@ -799,3 +799,13 @@ option:checked, option:hover {
   color: #fff;
   font-size: 16px;
 }
+       
+        .text-x{
+          color: #fff;
+          font-size: 10px;
+      }
+      .text-xb{
+          padding-top: 2px;
+          color: #fff;
+          font-size: 16px;
+      }
